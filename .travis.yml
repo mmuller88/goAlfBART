@@ -1,0 +1,23 @@
+language: node_js
+services: docker
+sudo: required
+node_js:
+  - v12
+
+before_install:
+  - sudo /etc/init.d/postgresql stop
+  # remove volume which create a permission denied issue
+  - sed -i '\|logs/postgres|d' ./docker-compose.yml
+
+stages:
+  - name: Deploy Test
+
+jobs:
+  include:
+    - stage: Deploy Test
+      name: Deploy with start script
+      script: chmod +x start.sh && ./start.sh
+
+after_failure:
+  - docker-compose config
+  - docker-compose logs

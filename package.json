@@ -1,0 +1,22 @@
+{
+  "name": "goalfbart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmuller88/goAlfBART.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmuller88/goAlfBART/issues"
+  },
+  "homepage": "https://github.com/mmuller88/goAlfBART#readme",
+  "dependencies": {
+    "wait-on": "^4.0.2"
+  }
+}
