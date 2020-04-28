@@ -24,8 +24,8 @@ set_wait_time(){
 
 # Defaults
 WAIT_TIME=500
-SERVER_NAME="<%=serverName%>"
-SERVER_PORT="<%=port%>"
+SERVER_NAME="localhost"
+SERVER_PORT="80"
 
 while [[ $1 == -* ]]; do
   case "$1" in
