@@ -22,6 +22,7 @@ jobs:
         - gobackup -h
         - gobackup -v
         - gobackup perform
+        - ls ./backup
 
 after_failure:
   - docker-compose config
