@@ -21,7 +21,6 @@ jobs:
         - curl -sSL https://git.io/gobackup | bash
         - gobackup -h
         - gobackup -v
-        - crontab -h
         - gobackup perform
 
 after_failure:

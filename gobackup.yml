@@ -11,8 +11,8 @@ models:
       password: alfresco
       timeout: 300
     databases:
-      gitlab:
-        type: postgres
+      alfresco:
+        type: postgresql
         host: localhost
         port: 5432
         database: alfresco
