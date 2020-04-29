@@ -1,7 +1,7 @@
 models:
   base_test:
     compress_with:
-      type: zip
+      type: tgz
     store_with:
       type: local
       path: ~/backup
@@ -19,7 +19,8 @@ models:
         database: alfresco
         username: alfresco
         password: alfresco
-        additional_options: --single-transaction --quick
+        # additional_options: --single-transaction --quick
+        path: backup
     # archive:
     #   includes:
     #     - /home/git/.ssh/
