@@ -1,45 +1,39 @@
 models:
-  gitlab:
+  base_test:
     compress_with:
-      type: tgz
+      type: zip
     store_with:
-      type: scp
+      type: local
       path: ~/backup
       host: your-host.com
       private_key: ~/.ssh/id_rsa
-      username: ubuntu
-      password: password
+      username: alfresco
+      password: alfresco
       timeout: 300
     databases:
       gitlab:
-        type: mysql
+        type: postgres
         host: localhost
-        port: 3306
-        database: gitlab_production
-        username: root
+        port: 5432
+        database: alfresco
+        username: alfresco
         password:
         additional_options: --single-transaction --quick
-      gitlab_redis:
-        type: redis
-        mode: sync
-        rdb_path: /var/db/redis/dump.rdb
-        invoke_save: true
-        password:
-    archive:
-      includes:
-        - /home/git/.ssh/
-        - /etc/mysql/my.conf
-        - /etc/nginx/nginx.conf
-        - /etc/nginx/conf.d
-        - /etc/redis/redis.conf
-        - /etc/logrotate.d/
-      excludes:
-        - /home/ubuntu/.ssh/known_hosts
-        - /etc/logrotate.d/syslog
-  gitlab_repos:
-    store_with:
-      type: local
-      path: /data/backups/gitlab-repos/
-    archive:
-      includes:
-        - /home/git/repositories
+    # archive:
+    #   includes:
+    #     - /home/git/.ssh/
+    #     - /etc/mysql/my.conf
+    #     - /etc/nginx/nginx.conf
+    #     - /etc/nginx/conf.d
+    #     - /etc/redis/redis.conf
+    #     - /etc/logrotate.d/
+    #   excludes:
+    #     - /home/ubuntu/.ssh/known_hosts
+    #     - /etc/logrotate.d/syslog
+  # gitlab_repos:
+  #   store_with:
+  #     type: local
+  #     path: /data/backups/gitlab-repos/
+  #   archive:
+  #     includes:
+  #       - /home/git/repositories
