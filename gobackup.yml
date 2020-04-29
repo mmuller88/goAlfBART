@@ -4,11 +4,12 @@ models:
       type: zip
     store_with:
       type: local
-      path: ~/backup
-      host: your-host.com
-      private_key: ~/.ssh/id_rsa
-      username: alfresco
-      password: alfresco
+      path: ./backup
+      host: localhost
+      keep: 10 #?
+      # private_key: ~/.ssh/id_rsa
+      # username: alfresco
+      # password: alfresco
       timeout: 300
     databases:
       alfresco:
