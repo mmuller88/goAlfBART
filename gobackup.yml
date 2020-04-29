@@ -17,7 +17,7 @@ models:
         port: 5432
         database: alfresco
         username: alfresco
-        password:
+        password: alfresco
         additional_options: --single-transaction --quick
     # archive:
     #   includes:
