@@ -21,7 +21,7 @@ jobs:
         - curl -sSL https://git.io/gobackup | bash
         - gobackup -h
         - gobackup -v
-        - sed -i 's/@@ACCESS_KEY_ID@@/'${ACCESS_KEY_ID}'/g; s/@@SECRET_ACCESS_KEY@@/'${ACCESS_KEY_ID}'/g' gobackup.yml
+        - sed -i 's/@@AWS_ACCESS_KEY_ID@@/'${AWS_ACCESS_KEY_ID}'/g; s/@@AWS_SECRET_ACCESS_KEY@@/'${AWS_ACCESS_KEY_ID}'/g' gobackup.yml
         - cat gobackup.yml
         - gobackup perform
         - echo 'pwd= ' && pwd
