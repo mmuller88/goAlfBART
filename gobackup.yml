@@ -8,8 +8,8 @@ models:
       bucket: mmueller
       region: eu-west-2
       path: backups
-      access_key_id: @@ACCESS_KEY_ID@@
-      secret_access_key: @@SECRET_ACCESS_KEY@@
+      access_key_id: @@AWS_ACCESS_KEY_ID@@
+      secret_access_key: @@AWS_SECRET_ACCESS_KEY@@
     # store_with:
     #   type: local
     #   path: /tmp
