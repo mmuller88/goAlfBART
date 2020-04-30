@@ -24,7 +24,7 @@ jobs:
         - gobackup perform
         - echo 'pwd= ' && pwd
         - ls
-        - ls backup
+        - ls /tmp/gobackup/
 
 after_failure:
   - docker-compose config
