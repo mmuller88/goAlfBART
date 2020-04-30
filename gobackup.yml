@@ -21,6 +21,9 @@ models:
         password: alfresco
         # additional_options: --single-transaction --quick
         path: backup
+    archive:
+      includes:
+        - data/alf-repo-data
     # archive:
     #   includes:
     #     - /home/git/.ssh/
