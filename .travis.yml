@@ -33,7 +33,13 @@ jobs:
         - gobackup -h
         - gobackup -v
         - PWD=$(pwd)
-        - sed -i -e 's#@@AWS_ACCESS_KEY_ID@@#'${AWS_ACCESS_KEY_ID}'#g' -e 's#@@AWS_SECRET_ACCESS_KEY@@#'${AWS_SECRET_ACCESS_KEY}'#g' -e 's#@@PWD@@#'${PWD}'#g' gobackup.yml
+        - |
+          if ${pushS3} ; then
+            sed -i -e 's#@@AWS_ACCESS_KEY_ID@@#'${AWS_ACCESS_KEY_ID}'#g' -e 's#@@AWS_SECRET_ACCESS_KEY@@#'${AWS_SECRET_ACCESS_KEY}'#g' -e 's#@@PWD@@#'${PWD}'#g' gobackups3.yml
+            mv gobackups3.yml gobackup.yml
+          else
+            mv gobackupslocal.yml gobackup.yml
+          fi
         - cat gobackup.yml
         - gobackup perform
         - echo 'pwd= ' && pwd
