@@ -1,5 +1,5 @@
 node_modules
 
 # volumes
-data
-logs
+/alf-test/data
+/alf-test/logs

@@ -2,23 +2,23 @@ models:
   base_test:
     compress_with:
       type: tgz
-    # store_with:
-    #   type: s3
-    #   keep: 10
-    #   bucket: mmueller
-    #   region: eu-west-2
-    #   path: backups
-    #   access_key_id: @@AWS_ACCESS_KEY_ID@@
-    #   secret_access_key: @@AWS_SECRET_ACCESS_KEY@@
     store_with:
-      type: local
-      path: @@PWD@@/backup
-      host: localhost
+      type: s3
       keep: 10
-      # private_key: ~/.ssh/id_rsa
-      # username: alfresco
-      # password: alfresco
-      timeout: 300
+      bucket: mmueller
+      region: eu-west-2
+      path: backups
+      access_key_id: @@AWS_ACCESS_KEY_ID@@
+      secret_access_key: @@AWS_SECRET_ACCESS_KEY@@
+    # store_with:
+    #   type: local
+    #   path: /tmp
+    #   host: localhost
+    #   keep: 10 #?
+    #   # private_key: ~/.ssh/id_rsa
+    #   # username: alfresco
+    #   # password: alfresco
+    #   timeout: 300
     databases:
       alfresco:
         type: postgresql
@@ -31,7 +31,7 @@ models:
         path: backup
     archive:
       includes:
-        - @@PWD@@/alf-test/data/
+        - @@PWD@@/data/alf-repo-data/
     # archive:
     #   includes:
     #     - /home/git/.ssh/

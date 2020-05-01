@@ -12,12 +12,23 @@ before_install:
 stages:
   - name: Deploy Test
 
+env:
+  pushS3: true
+  showDockerComposeOutput: false
+
 jobs:
   include:
     - stage: Deploy Test
       name: Deploy with start script
       script:
-        - chmod +x start.sh && ./start.sh
+        - |
+          chmod +x start.sh
+          if ${showDockerComposeOutput} ; then
+            ./start.sh
+          else
+            ./start.sh > /dev/null
+          fi
+        # - chmod +x start.sh && ./start.sh > /dev/null
         - curl -sSL https://git.io/gobackup | bash
         - gobackup -h
         - gobackup -v
@@ -28,6 +39,8 @@ jobs:
         - echo 'pwd= ' && pwd
         - ls
         - ls /tmp/gobackup/
+        - ls
+        - ls alf-test/data
 
 after_failure:
   - docker-compose config
