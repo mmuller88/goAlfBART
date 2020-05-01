@@ -107,7 +107,7 @@ services:
 
     share:
         build:
-          context: /alf-test/share
+          context: ./alf-test/share
           args:
             SHARE_TAG: ${SHARE_TAG}
         mem_limit: 848m
