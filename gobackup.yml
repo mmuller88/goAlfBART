@@ -31,7 +31,7 @@ models:
         path: backup
     archive:
       includes:
-        - data/alf-repo-data
+        - @@PWD@@/data/alf-repo-data
     # archive:
     #   includes:
     #     - /home/git/.ssh/
