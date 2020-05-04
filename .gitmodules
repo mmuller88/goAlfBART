@@ -1,0 +1,3 @@
+[submodule "alfresco-backup-and-recovery-tool"]
+	path = alfresco-backup-and-recovery-tool
+	url = https://github.com/mmuller88/alfresco-backup-and-recovery-tool
